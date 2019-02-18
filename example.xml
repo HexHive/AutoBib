@@ -1,0 +1,285 @@
+<bib>
+<venues>
+<venue short="SS3P">Open Textbook</venue>
+<venue short="ArmsRace">The Continuing Arms Race</venue>
+<venue short="AsiaCCS">ACM Symp. on InformAtion, Computer and Communications Security</venue>
+<venue short="AMAS-BT">Workshop on Architectural and Microarchitectural Support for Binary Translation</venue>
+<venue short="arXiv">arXiv Technical Report</venue>
+<venue short="ATC">Usenix Annual Technical Conference</venue>
+<venue short="BalCCon">Balkan Computer Congress</venue>
+<venue short="BHEU">BlackHat Europe</venue>
+<venue short="CC">International Conference on Compiler Construction</venue>
+<venue short="CCC">Chaos Communication Congress</venue>
+<venue short="CCS">ACM Conference on Computer and Communication Security</venue>
+<venue short="CODASPY">ACM Conference on Data and Application Security and Privacy</venue>
+<venue short="CSUR">ACM Computing Surveys</venue>
+<venue short="DSAL">AOSD workshop on Domain-Specific Aspect Languages</venue>
+<venue short="DIMVA">Conference on Detection of Intrusions and Malware and Vulnerability Assessment</venue>
+<venue short="ESORICS">European Symposium on Research in Computer Security</venue>
+<venue short="ESSoS">Int'l. Symp. on Eng. Secure Software and Systems</venue>
+<venue short="EuroSP">IEEE European Symposium on Security and Privacy</venue>
+<venue short="FEAST">Forming an Ecosystem Around Software Transformation</venue>
+<venue short="HotSWUp">Usenix Workshop on Hot Topics in Software Upgrades</venue>
+<venue short="IMC">ACM Internet Measurement Conference</venue>
+<venue short="ISMM">ACM SIGPLAN International Symposium on Memory Management</venue>
+<venue short="ISPASS">International Symposium on Performance Analysis of Systems and Software</venue>
+<venue short="LangSec">Language-theoretic Security IEEE Security and Privacy Workshop</venue>
+<venue short="NDSS">Network and Distributed System Security Symposium</venue>
+<venue short="Oakland">IEEE International Symposium on Security and Privacy</venue>
+<venue short="OSDI">Usenix Symposium on Operating Systems Design and Implementation</venue>
+<venue short="PLDI">ACM International Conference on Programming Language Design and Implementation</venue>
+<venue short="PPREW">Program Protection and Reverse Engineering Workshop</venue>
+<venue short="PST">IEEE Conference on Privacy, Security, and Trust</venue>
+<venue short="SEC">Usenix Security Symposium</venue>
+<venue short="SP">IEEE Security and Privacy Magazine</venue>
+<venue short="STM">International Workshop on Security and Trust Management</venue>
+<venue short="SyScan360">Symposium on Security for Asia Network + 360</venue>
+<venue short="SYSTOR">ACM International Systems and Storage Conference</venue>
+<venue short="TR">Technical Report</venue>
+<venue short="TRB">Transportation Research Board</venue>
+<venue short="TIFS">IEEE Transactions on Information Forensics and Security</venue>
+<venue short="TSE">IEEE Transactions on Software Engineering</venue>
+<venue short="VEE">ACM International Conference on Virtual Execution Environments</venue>
+<venue short="WOOT">Usenix Workshop on Offensive Technologies</venue>
+</venues>
+
+<publications>
+<!--
+  type can be any of:
+  * template (ignored)
+  * conference (conference publication)
+  * report (tech report or hacker conference)
+  * journal (journal publication)
+  * workshop (workshop publication)
+  * thesis (BSc | MSc | PhD thesis)
+  year="2014": year of the publication
+  report="no":
+  * If present, don't create a link to PDF.
+  * If present, create a link to the PDF.
+    If filename tag is not present, infer name based on year and
+    shortvenue: "files/{$Year[2:4]}{$ShortVenue}.pdf", e.g., 18CCS.pdf
+    If filename tag is present then "files/{$filename}.pdf
+ -->
+<publication type="template" year="2014">
+<title>Title of the publication</title>
+<authors>
+<author>First author</author>
+<author>Second author</author>
+</authors>
+<shortvenue>ReferenceIntoVenueTableAbove</shortvenue>
+<stats accept="XoutOf" submissions="Y"/>
+<doi>TheDoi</doi>
+<abstract>
+The abstract
+</abstract>
+<links>
+  <link href="https//foo.bar/" name="Lin Name"/>
+</links>
+</publication>
+
+<publication type="conference" year="2018">
+<title>Milkomeda: Safeguarding the Mobile GPU Interface Using WebGL Security Checks</title>
+<authors>
+<author>Zhihao Yao</author>
+<author>Saeed Mirzamohammadi</author>
+<author>Ardalan Amiri Sani</author>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>CCS</shortvenue>
+<doi>10.1145/3243734.3243772</doi>
+<stats accept="134" submissions="809"/>
+<abstract>
+GPU-accelerated graphics is commonly used in mobile applications.
+Unfortunately, the graphics interface exposes a large amount of potentially
+vulnerable kernel code (i.e., the GPU device driver) to untrusted applications.
+This broad attack surface has resulted in numerous reported vulnerabilities
+that are exploitable from unprivileged mobile apps.  We observe that web
+browsers have faced and addressed the exact same problem in WebGL, a framework
+used by web apps for graphics acceleration.  Web browser vendors have developed
+and deployed a plethora of security checks for the WebGL interface.
+
+We introduce Milkomeda, a system solution for automatically repurposing WebGL
+security checks to safeguard the mobile graphics interface.  We show that these
+checks can be used with minimal modifications (which we have automated using a
+tool called CheckGen), significantly reducing the engineering effort.
+Moreover, we demonstrate an in-process shield space for deploying these checks
+for mobile applications.  Compared to the multi-process architecture used by
+web browsers to protect the integrity of the security checks, our solution
+improves the graphics performance by eliminating the need for Inter-Process
+Communication and shared memory data transfer, while providing integrity
+guarantees for the evaluation of security checks.  Our evaluation shows that
+Milkomeda achieves close-to-native GPU performance at reasonably increased CPU
+utilization.
+
+</abstract>
+<filename>CCS2</filename>
+<links>
+  <link href="https://nebelwelt.net/blog/2019/0102-Milkomeda.html" name="blog post"/>
+  <link href="https://github.com/trusslab/milkomeda" name="source"/>
+</links>
+</publication>
+
+<publication type="conference" year="2018">
+<title>Block Oriented Programming: Automating Data-Only Attacks</title>
+<authors>
+<author>Kyriakos Ispoglou</author>
+<author>Bader AlBassam</author>
+<author>Trent Jaeger</author>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>CCS</shortvenue>
+<doi>10.1145/3243734.3243739</doi>
+<stats accept="134" submissions="809"/>
+<abstract>
+With the widespread deployment of Control-Flow Integrity (CFI), control-flow
+hijacking attacks, and consequently code reuse attacks, are significantly more
+difficult.  CFI limits control flow to well-known locations, severely
+restricting arbitrary code execution. Assessing the remaining attack surface of
+an application under advanced control-flow hijack defenses such as CFI and
+shadow stacks remains an open problem.
+
+We introduce BOPC, a mechanism to automatically assess whether an attacker can
+execute arbitrary code on a binary hardened with CFI/shadow stack defenses.
+BOPC computes exploits for a target program from payload specifications written
+in a Turing-complete, high-level language called SPL that abstracts away
+architecture and program-specific details.  SPL payloads are compiled into a
+program trace that executes the desired behavior on top of the target binary.
+The input for BOPC is an SPL payload, a starting point (e.g., from a fuzzer
+crash) and an arbitrary memory write primitive that allows application state
+corruption.  To map SPL payloads to a program trace, BOPC introduces Block
+Oriented Programming (BOP), a new code reuse technique that utilizes entire
+basic blocks as gadgets along valid execution paths in the program, i.e.,
+without violating CFI or shadow stack policies.  We find that the problem of
+mapping payloads to program traces is NP-hard, so BOPC first reduces the search
+space by pruning infeasible paths and then uses heuristics to guide the search
+to probable paths. BOPC encodes the BOP payload as a set of memory writes.
+
+We execute 13 SPL payloads applied to $10$ popular applications. BOPC
+successfully finds payloads and complex execution traces -- which would likely
+not have been found through manual analysis -- while following the target's
+Control-Flow Graph under an ideal CFI policy in $81\%$ of the cases.
+
+</abstract>
+<links>
+  <link href="https://nebelwelt.net/blog/20181231-BOP.html" name="blog post"/>
+  <link href="https://arxiv.org/abs/1805.04767" name="arXiv"/>
+  <link href="https://github.com/HexHive/BOPC" name="source"/>
+</links>
+</publication>
+
+<publication type="collection" year="2018" report="no">
+<title>Software Security: Principles, Policies, and Protection (SS3P)</title>
+<authors>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>SS3P</shortvenue>
+<links>
+  <link href="https://nebelwelt.net/SS3P/" name="book"/>
+</links>
+</publication>
+
+<publication type="report" year="2018" presentation="yes" report="no">
+<title>Type Confusion: Discovery, Abuse, Protection</title>
+<authors>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>SyScan360</shortvenue>
+<venue>Symposium on Security for Asia Network + 360</venue>
+<abstract>
+</abstract>
+<links>
+  <link href="https://github.com/HexHive/HexType" name="source"/>
+</links>
+</publication>
+
+<publication type="collection" year="2018" report="no">
+<title>How Memory Safety Violations Enable Exploitation of Programs</title>
+<authors>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>ArmsRace</shortvenue>
+<isbn>978-1-97000-183-9</isbn>
+<doi>10.1145/3129743.3129745</doi>
+</publication>
+
+<publication type="journal" year="2017">
+<title>Control-Flow Integrity: Precision, Security, and Performance</title>
+<authors>
+<author>Nathan Burow</author>
+<author>Scott A. Carr</author>
+<author>Joseph Nash</author>
+<author>Per Larsen</author>
+<author>Michael Franz</author>
+<author>Stefan Brunthaler</author>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>CSUR</shortvenue>
+<doi>10.1109/TSE.2016.2625248</doi>
+<abstract>
+Memory corruption errors in C/C++ programs remain the most common source of
+security vulnerabilities in today's systems. Control-flow hijacking attacks
+exploit memory corruption vulnerabilities to divert program execution away from
+the intended control flow. Researchers have spent more than a decade studying
+and refining defenses based on Control-Flow Integrity (CFI), and this technique
+is now integrated into several production compilers. However, so far no study
+has systematically compared the various proposed CFI mechanisms, nor is there
+any protocol on how to compare such mechanisms.
+
+We compare a broad range of CFI mechanisms using a unified nomenclature based on
+(i) a qualitative discussion of the conceptual security guarantees, (ii) a
+quantitative security evaluation, and (iii) an empirical evaluation of their
+performance in the same test environment. For each mechanism, we evaluate
+(i) protected types of control-flow transfers, (ii) the precision of the
+protection for forward and backward edges.  For open-source compiler-based
+implementations, we additionally evaluate (iii) the generated equivalence
+classes and target sets, and (iv) the runtime performance.
+</abstract>
+<links>
+  <link href="http://arxiv.org/abs/1602.04056" name="arXiv"/>
+</links>
+</publication>
+
+<publication type="workshop" year="2016">
+<title>libdetox: A Framework for Online Program Transformation</title>
+<authors>
+<author>Mathias Payer</author>
+</authors>
+<shortvenue>FEAST</shortvenue>
+<venue>Forming an Ecosystem Around Software Transformation</venue>
+<abstract>
+Software is commonly available in binary form. Yet, the consumer would often
+like to gather information about the application, e.g., what functionality is
+available and needed or what security mechanisms are active. In secure
+environments, the code must also be hardened against attacks. So far,
+existing binary analysis and translation mechanisms are often ad-hoc and only
+target one aspect of the problem.
+
+We propose libdetox, a principled framework for continuous binary analysis and
+instrumentation. Our framework builds on an efficient binary translator and a
+trusted program loader to enable the collection of vast information which is
+later used for binary hardening. We present several runtime monitors such as a
+shadow stack, control-flow integrity, system call monitor, or on-the-fly patch
+application.
+</abstract>
+</publication>
+
+<publication type="thesis" year="2012">
+<title>Safe Loading and Efficient Runtime Confinement: A Foundation for Secure Execution</title>
+<authors>
+<author>Mathias Payer</author>
+</authors>
+<venue>ETH Zurich Dr. sc. Thesis</venue>
+<abstract>
+Protecting running applications is a hard problem. Many applications are written in a low-level language and are prone to exploits. Bugs can be used to exploit the application and to run malicious code. A rigorous code review is often not possible due to the size and the complexity of the applications. Even a detailed code review does not guarantee that all bugs in the application are found.
+
+This thesis presents a model for the secure execution of untrusted code. The model assumes that the application code contains bugs but that the application is not malicious (i.e., malware). The application is safe if the model protects from all attack vectors through code-based or data-based exploits in the untrusted code. The model verifies all code prior to execution and ensures that no unchecked control flow transfers are possible. An important design decision is to use a dynamic approach for the implementation with minimal impact on the original applications. Binary only applications are executed without static recompilation or changes to the compiler toolchain (e.g., no recompilation is needed and features like dynamically loaded libraries, lazy binding, or hand written assembly code are still usable).
+
+A dynamic, transparent sandbox in user-space loads and verifies code using binary translation. A secure loader starts the sandbox and bootstraps the application and all needed libraries in the sandbox. The sandbox checks the application code before it is executed and adds security guards during the translation. The combination of the secure loader and the sandbox protects from code-oriented exploits. System calls are redirected by the sandbox to a policy-based system call authorization layer that verifies every system call towards a policy. Every control flow transfer in the application code is verified using a dynamic control flow model. Control flow transfers to illegal locations or instructions that are not legal in the application stop the program. The combination of a system call policy and control flow integrity protects the application from code-based and data-based exploits.
+
+A prototype implementation is used to evaluate the performance and effectiveness of the proposed model. We show that the overhead for our prototype implementation is low and that the model protects from all code-based exploits. The control flow model restricts the attack space for data-based attacks and restricts control flow transfers of the application to well-known and valid locations. The small and modular trusted computing base enables code reviews and allows additional security modules (e.g., a module that detects file-based race condition.
+</abstract>
+<filename>thesis-payerm</filename>
+</publication>
+
+</publications>
+</bib>
