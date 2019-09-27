@@ -157,10 +157,10 @@ if __name__ == "__main__":
     if args.type == 'html':
         txt = open(args.template).read()
         ret += txt[0:txt.find('###CONTENT###')]
-        ret += handlePublications(pubs, 'collection', 'Books and Chapters')
-        ret += handlePublications(pubs, 'journal', 'Journal and Magazine Publications')
         ret += handlePublications(pubs, 'conference', 'Conference Proceedings')
+        ret += handlePublications(pubs, 'journal', 'Journal and Magazine Publications')
         ret += handlePublications(pubs, 'workshop', 'Workshop Proceedings')
+        ret += handlePublications(pubs, 'collection', 'Books and Chapters')
         ret += handlePublications(pubs, 'report', 'Technical Reports and Hacker Conferences')
         if args.template == "nebelwelt.html":
             ret += handlePublications(pubs, 'thesis', 'Theses')
