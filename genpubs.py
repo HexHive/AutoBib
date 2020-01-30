@@ -93,7 +93,7 @@ def handleBibs(xmldoc, venue):
     return ret
 
 def handlePublications(xmldoc, venue, title):
-    ret =  '<h1>' + title + '</h1>\n'
+    ret =  '<h4>' + title + '</h4>\n'
     for e in xmldoc.findall('publications/publication/[@type="'+venue+'"]'):
         # Print title
         ret += '<p class="publication">\n'
@@ -122,7 +122,7 @@ def handlePublications(xmldoc, venue, title):
             if e.find('shortvenue').text not in venues:
                 print("OOps, {} is not in venues.".format(e.find('shortvenue').text))
         else:
-            ret += 'In <i>' + e.find('venue').text
+            ret += 'In <i>' + e.find('venue').text + '</i>'
         # Do we have any additional remarks (links, notes, presentation)?
         addon = ''
         if 'presentation' in e.attrib:
