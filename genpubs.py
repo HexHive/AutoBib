@@ -1,9 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 __author__ = "Mathias Payer <mathias@nebelwelt.net>"
 __description__ = "Script to generate the publication html structure based on the XML."
-__version__ = filter(str.isdigit, "$Revision: 1 $")
 
 import xml.etree.ElementTree as ET
 import sys
@@ -143,7 +142,6 @@ def handlePublications(xmldoc, venue, title):
 
 if __name__ == "__main__":
     parser = ArgumentParser(description=__description__)
-    parser.add_argument('-v', '--version', action='version', version='%(prog)s {:s}'.format(__version__))
     parser.add_argument('-t', '--template', type=str, metavar='template filename', help='Filename for the template to use.', required=False)
     parser.add_argument('-o', '--out', type=str, metavar='output filename', help='Filename to write output', required=True)
     parser.add_argument('-p', '--publications', type=str, metavar='publications file', help='XML file containing publications', required=False, default='publications.xml')
