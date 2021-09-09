@@ -93,6 +93,7 @@ def handleBibs(xmldoc, venue):
 
 def handlePublications(xmldoc, venue, title):
     ret =  '<h4>' + title + '</h4>\n'
+    prevyear = '0'
     for e in xmldoc.findall('publications/publication/[@type="'+venue+'"]'):
         # Print title
         ret += '<p class="publication">\n'
@@ -105,9 +106,14 @@ def handlePublications(xmldoc, venue, title):
         else:
             note = ''
         if not 'report' in e.attrib:
-            ret += '<b><a href="./files/' + filename + '.pdf" name="'+filename+'">' + e.find('title').text + '</a></b><br/>'
+            ret += '<b><a href="./files/' + filename + '.pdf" name="'+filename+'">' + e.find('title').text + '</a></b>'
         else:
-            ret += '<b><u><a name="'+filename+'">' + e.find('title').text + '</a></u></b><br/>'
+            ret += '<b><u><a name="'+filename+'">' + e.find('title').text + '</a></u></b>'
+        if prevyear != e.attrib['year']:
+            prevyear = e.attrib['year']
+            ret += '<span class="float-right"><b>'+prevyear+'</b></span><br/>'
+        else:
+            ret += '<br/>'
         # Print authors
         for author in e.find('authors')[:-1]:
             ret += author.text + ', '
