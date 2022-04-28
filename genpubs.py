@@ -75,8 +75,8 @@ def handleBibs(xmldoc, venue):
                 rate = rate[0:rate.find('.')]
                 details = '{}\\% acceptance rate -- {}/{}'.format(rate, stats.attrib['accept'], stats.attrib['submissions'])
             note = ''
-            if 'note' in stats.attrib:
-                note = '\\textbf{' + stats.attrib['note'] + '}'
+            if e.find('note') != None:
+                note = '\\textbf{' + e.find('note').text + '}'
             if note != '' and details !='':
                 note = note + ' ,'
             ret += '  pages = {(' + note + details + ')},\n'
