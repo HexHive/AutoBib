@@ -56,12 +56,15 @@ def handleBibs(xmldoc, venue):
         ret += '  title = {{' + e.find('title').text + '}},\n'
         ret += '  year = {' + e.attrib['year'] + '},\n'
         if name == 'inproceedings' and venue != 'report':
-            ret += '  booktitle = ' + e.find('shortvenue').text + ',\n'
+            #ret += '  booktitle = ' + e.find('shortvenue').text + ',\n'
+            ret += '  booktitle = {' + venues[e.find('shortvenue').text] + '},\n'
         if name == 'article':
-            ret += '  journal = ' + e.find('shortvenue').text + ',\n'
+            #ret += '  journal = ' + e.find('shortvenue').text + ',\n'
+            ret += '  journal = {' + venues[e.find('shortvenue').text] + '},\n'
         if venue == 'report':
             if 'report' in e.attrib:
-                ret += '  booktitle = ' + e.find('shortvenue').text + ',\n'
+                ret += '  booktitle = {' + venues[e.find('shortvenue').text] + '},\n'
+                #ret += '  booktitle = ' + e.find('shortvenue').text + ',\n'
             else:
                 ret += '  booktitle = {' + venues[e.find('shortvenue').text]
                 ret += ' \\url{http://nebelwelt.net/publications/files/' + filename + '.pdf}},\n'
@@ -171,9 +174,9 @@ if __name__ == "__main__":
         # TODO: student theses
         ret += txt[txt.find('###CONTENT###')+13:]
     if args.type == 'bib':
-        for i in venues:
-            ret +='@string{' + i + '="' + venues[i] + '"}\n'
-        ret += '\n\n'
+        #for i in venues:
+        #    ret +='@string{' + i + '="' + venues[i] + '"}\n'
+        #ret += '\n\n'
         ret += handleBibs(pubs, 'collection')
         ret += handleBibs(pubs, 'journal')
         ret += handleBibs(pubs, 'conference')
